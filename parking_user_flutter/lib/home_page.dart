@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_user_flutter/profile_page.dart';
 import 'package:parking_user_flutter/vehicle_code_page.dart';
 import 'package:parking_user_flutter/widgets/drawer_home.dart';
 import 'package:wave/config.dart';
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Parking User',
       routes: {
         '/QRCodePage': (context) => QRCode(),
+        '/ProfilePages':(context)=>Profile(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -188,7 +190,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             'Cá nhân',
                             style: TextStyle(fontSize: 20),
                           ),
-                          onTap: () => {}, // write function in here
+                          onTap: () => {
+                            Navigator.pushNamed(context, Profile.routeName)
+                          }, // write function in here
                         ),
                       ),
                       elevation: 5,
